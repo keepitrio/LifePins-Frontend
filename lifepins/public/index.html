@@ -27,13 +27,27 @@
         L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
         var map = L.mapquest.map('map', {
-          center: [37.7749, -122.4194],
+          center: [39.7392, -104.9903],
           layers: L.mapquest.tileLayer('map'),
-          zoom: 12
+          zoom: 6
         });
 
-        map.addControl(L.mapquest.control());
-      }
+        L.marker([39.7392, -104.9903], {
+          icon: L.mapquest.icons.marker(),
+          draggable: false
+        }).bindPopup('Hello, CO').addTo(map);
+
+        L.circle([38.8339, -104.8214], { radius: 20000 }).addTo(map);
+
+        var denverLatLngs = [
+          [36.99, -102.05],
+          [37, -109.05],
+          [41, -109.05],
+          [41, -102.05]
+        ];
+
+        L.polygon(denverLatLngs, {color: 'red'}).addTo(map);
+      };
     </script>
   </head>
   <body>
