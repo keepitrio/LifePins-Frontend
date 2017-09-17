@@ -30,20 +30,21 @@ class Form extends Component {
   }
 
   createPosting(name, contact,  address,  categories, number_of_people) {
-      axios.post('http://localhost:3001/create', {
+      axios.get('http://localhost:3001/create', {params:
+        {
         name: name,
         contact: contact, 
         address: address,
         categories: categories,
         number_of_people: number_of_people
+        }
 			})
 		.then(function(response) {
-      console.log("did u even succeed");
-      console.log(response);
+      console.log("hurray")
 			document.getElementById("posting-form").reset();
+      window.location.reload();
 			})
 		.catch(function(error) {
-      console.log("this is an error");
 			console.log(error);
 		})
 	}
@@ -110,14 +111,6 @@ class Form extends Component {
   				</select>
       	</label>
       	<br />
-      	<label>
-      			<input
-      				placeholder="Number of people you can provide for:"
-      				name="number_of_people"
-      				type="string"
-      				onChange={this.handleInputChange}
-      			/>
-      	</label>
       	<input type="submit" value="Save Lives" />
       </form>
     );
