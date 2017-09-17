@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Dropdown from 'react-dropdown';
 
 class Form extends Component {
 	constructor() {
@@ -61,7 +60,7 @@ class Form extends Component {
       	<br />
       	<label>
       		<label> What you can provide: </label>
-    			<select 
+    			<select
     				name="dropdownValue"
     				value={this.state.value}
     				onChange={this.handleInputChange}>
