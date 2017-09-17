@@ -2,9 +2,8 @@ body {
   height: 100%;
   padding-left: 3%;
   padding-right: 3%;
-  margin: 0px;
   font-family: 'Noto Sans', 'sans-serif';
-  background-color: #e9ffe5;
+  background-color: #eafcee;
 }
 
 .App {
@@ -15,47 +14,41 @@ body {
   width: 60%; 
   height: 530px;
   display: inline-block;
-  margin-left: 20px;
+  border-left: 0;
   vertical-align: top;
 }
 
-/*#map-container {
-  box-shadow: 2px 2px 2px #888888;
-  background-color: #fffdef;
-  padding: 20px;
-  border-radius: 30px;
-}*/
-
 .header {
   font-family: 'Ubuntu', sans-serif;
-  background-color: #fffdef;
-  border-radius: 30px;
-  box-shadow: 1px;
-  color: green;
-  box-shadow: 2px 2px 2px #888888;
+  color: #339933;
+  font-size: 1.6em;
+  text-align: center;
+}
+
+.header h1 {
+  border-bottom: 2px solid;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#logo {
+  height: 50px;
 }
 
 form {
   width: 30%;
   display: inline-block;
-  margin-right: 20px;
-  border-radius: 30px;
-  padding: 10px;
-  background-color: #fffdef;
-  box-shadow: 2px 2px 2px #888888;
+  padding: 20px;
+  border-radius: 3px;
+  margin-left: 5%;
+  box-shadow: 0 0 3px #888888;
 }
 
 form input {
+  color: #339933;
   width: 80%;
   margin: 5px;
   padding: 10px;
-  border-top: none;
-  border-right: none;
-  border-left: none;
-  background-color: #fffdef;
-  border-radius: 20px;
-}
-
-form label {
-/*  color: pink;*/
+  border: none;
+  background-color: #eafcee;
 }
