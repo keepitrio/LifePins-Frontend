@@ -3,21 +3,21 @@ import './App.css';
 import axios from 'axios';
 
 class Form extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			name: '',
 			contact: '',
 			address: '',
 			categories: '',
-			number_of_people: '',
-			dropdownValue: 'Category'
+			number_of_people: ''
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
     this.createPosting = this.createPosting.bind(this);
-    this.setPosting = this.setPosting.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleInputChange = (e) => {
@@ -29,19 +29,18 @@ class Form extends Component {
 		});
   }
 
-	createPosting(name,	contact,	address,	categories,	number_of_people) {
-			axios.post('http://localhost:3001/create', {
-				name: name,
-				contact: contact, 
-				address: address,
-				categories: categories,
-				number_of_people: number_of_people
+  createPosting(name, contact,  address,  categories, number_of_people) {
+      axios.post('http://localhost:3001/create', {
+        name: name,
+        contact: contact, 
+        address: address,
+        categories: categories,
+        number_of_people: number_of_people
 			})
 		.then(function(response) {
       console.log("did u even succeed");
       console.log(response);
 			document.getElementById("posting-form").reset();
-			this.setState({dropdownValue: 'categories'});
 			})
 		.catch(function(error) {
       console.log("this is an error");
@@ -49,13 +48,18 @@ class Form extends Component {
 		})
 	}
 
-	setPosting() {
+  handleSubmit(event) {
+    event.preventDefault();
     this.createPosting(this.state.name, this.state.contact, this.state.address, this.state.categories, this.state.number_of_people)
-	}
+  }
+
+  handleChange(e) {
+    this.setState({categories: e.target.value})
+  }
 
   render() {
     return (
-      <form id="posting-form">
+      <form id="posting-form" onSubmit={this.handleSubmit}>
       	<label>How can you help?</label>
       	<label>
       			<input
@@ -87,9 +91,9 @@ class Form extends Component {
       	<label>
       		<label> What you can provide: </label>
     			<select
-    				name="dropdownValue"
-    				value={this.state.value}
-    				onChange={this.handleInputChange}>
+    				value={this.state.categories}
+    				onChange={this.handleChange}>
+            <option>Please pick one</option>
     				<option value="water">Water</option>
     				<option value="food">Food</option>
     				<option value="shower">Shower</option>
@@ -105,7 +109,7 @@ class Form extends Component {
       				onChange={this.handleInputChange}
       			/>
       	</label>
-      	<input type="submit" value="Save Lives" onSubmit={this.setPosting}/>
+      	<input type="submit" value="Save Lives" />
       </form>
     );
   }
