@@ -114,7 +114,7 @@ class Form extends Component {
         <br />
         <input id="prov-button" type="submit" value="Drop an AidPin" onSubmit={this.setPosting}/>
       </form>
-      <p>AidPin lets you offer help to those in need after a natural disaster.</p>
+      <p>Find the help you need or be the help somebody needs during a natural disaster with Aidpin.</p>
       </div>
     );
   }
