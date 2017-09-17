@@ -14,6 +14,7 @@ class Form extends Component {
 			number_of_people: '',
 			dropdownValue: 'Category',
 			address: ''
+		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
