@@ -26,16 +26,19 @@
 #map {
   width: 60%; 
   height: 530px;
-  float: left;
+  display: inline-block;
   margin-left: 20px;
+  vertical-align: top;
 }
 
 form {
   width: 30%;
-  float: right;
+  display: inline-block;
   margin-right: 20px;
   border: 1px solid grey;
   padding: 10px;
+  vertical-align: top;
+  margin-left: 10px;
 }
 
 form input {

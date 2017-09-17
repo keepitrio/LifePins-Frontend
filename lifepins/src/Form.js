@@ -13,7 +13,7 @@ class Form extends Component {
 			address: '',
 			category: '',
 			numberOfPeople: '',
-			value: 'Category'
+			dropdownValue: 'Category'
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -62,6 +62,7 @@ class Form extends Component {
       	<label>
       		<label> What you can provide: </label>
     			<select 
+    				name="dropdownValue"
     				value={this.state.value}
     				onChange={this.handleInputChange}>
     				<option value="water">Water</option>
@@ -79,6 +80,7 @@ class Form extends Component {
       				onChange={this.handleInputChange}
       			/>
       	</label>
+      	<input type="submit" value="Save Lives" />
       </form>
     );
   }
