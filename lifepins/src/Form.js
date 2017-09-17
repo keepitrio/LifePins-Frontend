@@ -58,7 +58,6 @@ class Form extends Component {
   render() {
     return (
       <form id="posting-form">
-      	<label>How can you help?</label>
       	<label>
       			<input
       				placeholder="Name"
@@ -96,7 +95,7 @@ class Form extends Component {
         </label>
         <br />
       	<label>
-      		<label> What can you provide? </label>
+      		<label id="provisions"> What can you provide? </label>
     			<select
     				name="dropdownValue"
     				value={this.state.value}
