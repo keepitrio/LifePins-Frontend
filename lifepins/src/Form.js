@@ -62,7 +62,7 @@ class Form extends Component {
     return (
       <div id="sidebar">
       <form id="posting-form" onSubmit={this.handleSubmit}>
-        <label>Provide an amenity</label>
+        <label>Provide an Amenity</label>
         <label>
             <input
               placeholder="Your name"
@@ -100,11 +100,10 @@ class Form extends Component {
         </label>
         <br />
         <label>
-          <label id="provisions"> What can you provide? </label>
-          <select
+          <select id="provisions"
             value={this.state.categories}
             onChange={this.handleChange}>
-            <option>Please pick one</option>
+            <option>What can you provide?</option>
             <option value="water">Water</option>
             <option value="food">Food</option>
             <option value="shower">Shower</option>
