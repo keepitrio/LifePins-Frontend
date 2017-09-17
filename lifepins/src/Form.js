@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Dropdown from 'react-dropdown';
+import axios from 'axios';
 
 class Form extends Component {
 	constructor() {
@@ -11,12 +10,15 @@ class Form extends Component {
 			name: '',
 			contact: '',
 			address: '',
-			category: '',
-			numberOfPeople: '',
-			value: 'Category'
+			categories: '',
+			number_of_people: '',
+			dropdownValue: 'Category',
+			address: ''
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
+    this.createPosting = this.createPosting.bind(this);
+    this.setPosting = this.setPosting.bind(this);
 	}
 
 	handleInputChange = (e) => {
@@ -28,9 +30,34 @@ class Form extends Component {
 		});
 	}
 
+	createPosting(name,	contact,	address,	categories,	number_of_people) {
+			var self = this
+			axios.post('http://localhost:3000/create', {
+				name: name,
+				contact: contact, 
+				address: address,
+				categories: categories,
+				number_of_people: number_of_people
+			})
+		.then(function(response) {
+      console.log("did u even succeed");
+      console.log(response);
+			document.getElementById("posting-form").reset();
+			self.setState({dropdownValue: 'categories'});
+			})
+		.catch(function(error) {
+      console.log("this is an error");
+			console.log(error);
+		})
+	}
+
+	setPosting() {
+		this.createPosting(this.state.name, this.state.contact, this.state.address, this.state.categories, this.state.number_of_people)
+	}
+
   render() {
     return (
-      <form>
+      <form id="posting-form">
       	<label>How can you help?</label>
       	<label>
       			<input
@@ -61,7 +88,8 @@ class Form extends Component {
       	<br />
       	<label>
       		<label> What you can provide: </label>
-    			<select 
+    			<select
+    				name="dropdownValue"
     				value={this.state.value}
     				onChange={this.handleInputChange}>
     				<option value="water">Water</option>
@@ -74,11 +102,12 @@ class Form extends Component {
       	<label>
       			<input
       				placeholder="Number of people you can provide for:"
-      				name="numberOfPeople"
+      				name="number_of_people"
       				type="string"
       				onChange={this.handleInputChange}
       			/>
       	</label>
+      	<input type="submit" value="Save Lives" onSubmit={this.setPosting}/>
       </form>
     );
   }
