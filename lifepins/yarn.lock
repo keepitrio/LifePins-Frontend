@@ -1338,10 +1338,6 @@ clap@^1.0.9:
   dependencies:
     chalk "^1.1.3"
 
-classnames@^2.2.3:
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.2.5.tgz#fb3801d453467649ef3603c7d61a02bd129bde6d"
-
 clean-css@4.1.x:
   version "4.1.8"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.8.tgz#061455b2494a750ac98f46d8d5ebb17c679ea9d1"
@@ -5052,6 +5048,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-axios@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-axios/-/react-axios-1.0.3.tgz#df930b5688cccb4ab51b1d8438ead486a4a295fb"
+
 react-dev-utils@^4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-4.0.1.tgz#106ae3d29f811c169d459bb9215a5933b7e11fb6"
@@ -5083,12 +5083,6 @@ react-dev-utils@^4.0.1:
     loose-envify "^1.1.0"
     object-assign "^4.1.0"
     prop-types "^15.5.10"
-
-react-dropdown@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/react-dropdown/-/react-dropdown-1.3.0.tgz#11cfce8e2e936b1a8ba2d4a700b1fe19f64c4792"
-  dependencies:
-    classnames "^2.2.3"
 
 react-error-overlay@^2.0.1:
   version "2.0.1"

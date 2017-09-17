@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Dropdown from 'react-dropdown';
+import axios from 'axios';
 
 class Form extends Component {
 	constructor() {
@@ -11,10 +10,10 @@ class Form extends Component {
 			name: '',
 			contact: '',
 			address: '',
-			category: '',
-			numberOfPeople: '',
-			dropdownValue: 'Category'
-		}
+			categories: '',
+			number_of_people: '',
+			dropdownValue: 'Category',
+			address: ''
 
 		this.handleInputChange = this.handleInputChange.bind(this);
 	}
@@ -28,9 +27,31 @@ class Form extends Component {
 		});
 	}
 
+	createPosting(name,	contact,	address,	categories,	number_of_people) {
+			var self = this
+			axios.post('lhttp://localhost:3000/create', {
+				name: name,
+				contact: contact, 
+				address: address,
+				categories: categories,
+				number_of_people: number_of_people
+			})
+		.then(function(response) {
+			document.getElementById("posting-form").reset();
+			self.setState({dropdownValue: 'categories'});
+			})
+		.catch(function(error) {
+			console.log(error);
+		})
+	}
+
+	setPosting() {
+		this.createPosting(this.state.name, this.state.contact, this.state.address, this.state.categories, this.state.number_of_people)
+	}
+
   render() {
     return (
-      <form>
+      <form id="posting-form">
       	<label>How can you help?</label>
       	<label>
       			<input
@@ -75,7 +96,7 @@ class Form extends Component {
       	<label>
       			<input
       				placeholder="Number of people you can provide for:"
-      				name="numberOfPeople"
+      				name="number_of_people"
       				type="string"
       				onChange={this.handleInputChange}
       			/>
