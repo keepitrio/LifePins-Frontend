@@ -13,7 +13,7 @@ window.onload = function() {
           shadow: true,
           size: 'md'
         }),
-        draggable: true
+        draggable: false
       }).bindPopup('Name: ' + markers[i]["name"] + '<br/>' +
                   'Can provide: ' + markers[i]["categories"] + '<br/>' +
                   'Can accommodate: ' + markers[i]["number_of_people"])
