@@ -68,7 +68,11 @@ form input {
   padding: 10px;
   border: none;
   background-color: #eafcee;
-  font-size: 0.88em;
+  font-size: 0.77em;
+}
+
+#accomodate {
+  font-size: 0.66em;
 }
 
 form label {
