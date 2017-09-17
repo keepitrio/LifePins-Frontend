@@ -93,16 +93,11 @@ class Form extends Component {
         </label>
         <br />
       	<label>
-      		<label id="provisions"> What can you provide? </label>
-    			<select
-    				name="dropdownValue"
-    				value={this.state.value}
-    				onChange={this.handleInputChange}>
-    				<option value="water">Water</option>
-    				<option value="food">Food</option>
-    				<option value="shower">Shower</option>
-    				<option value="bed">Bed</option>
-  				</select>
+      	<label id="provisions"> What can you provide? </label>
+          <input type="checkbox" name="provisions" value="{this.state.value}" onChange={this.handleInputChange}/>Water<br/>
+          <input type="checkbox" name="provisions" value="{this.state.value}" onChange={this.handleInputChange}/>Food<br/>
+          <input type="checkbox" name="provisions" value="{this.state.value}" onChange={this.handleInputChange}/>Shower<br/>
+          <input type="checkbox" name="provisions" value="{this.state.value}" onChange={this.handleInputChange}/>Bed<br/>
       	</label>
       	<br />
         <input type="submit" value="Save Lives" onSubmit={this.setPosting}/>
