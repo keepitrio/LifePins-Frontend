@@ -82,7 +82,7 @@ class Form extends Component {
       	<br />
       	<label>
       		<label> What you can provide: </label>
-    			<select 
+    			<select
     				name="dropdownValue"
     				value={this.state.value}
     				onChange={this.handleInputChange}>
