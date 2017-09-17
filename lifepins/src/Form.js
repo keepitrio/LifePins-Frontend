@@ -92,7 +92,8 @@ class Form extends Component {
         <br />
         <label>
             <input
-              placeholder="Number of people you can provide for"
+              id="accomodate"
+              placeholder="How many people can you accomodate?"
               name="number_of_people"
               type="string"
               onChange={this.handleInputChange}
@@ -113,7 +114,7 @@ class Form extends Component {
         <br />
         <input id="prov-button" type="submit" value="Drop an AidPin" onSubmit={this.setPosting}/>
       </form>
-      <p>PLACEHOLDER TEXT</p>
+      <p>AidPin lets you offer help to those in need after a natural disaster.</p>
       </div>
     );
   }
