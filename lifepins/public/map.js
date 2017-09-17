@@ -8,7 +8,7 @@ window.onload = function() {
     for (var i = 0; i < markers.length; i++) {
       L.marker([markers[i]["latitude"], markers[i]["longitude"]], {
         icon: L.mapquest.icons.marker({
-          primaryColor: '#474747',
+          primaryColor: '#228B22',
           secondaryColor: '#228B22',
           shadow: true,
           size: 'md'
