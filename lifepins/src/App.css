@@ -71,6 +71,17 @@ form input {
   font-size: 0.77em;
 }
 
+#description {
+  width: 83%;
+  padding: 20px;
+  padding-right: 20px;
+  color: white;
+  border-radius: 3px;
+  margin-left: 5%;
+  background-color: #262626;
+  opacity: 0.8;
+}
+
 #accomodate {
   font-size: 0.66em;
 }
@@ -108,3 +119,4 @@ form label {
   margin-top: 5px;
   font-size: 1em;
 }
+
