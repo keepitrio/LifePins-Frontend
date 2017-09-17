@@ -63,7 +63,7 @@ class Form extends Component {
       	<label>How can you help?</label>
       	<label>
       			<input
-      				placeholder="Name:"
+      				placeholder="Name"
       				name="name"
       				type="string"
       				onChange={this.handleInputChange}
@@ -72,7 +72,7 @@ class Form extends Component {
       	<br />
       	<label>
       			<input
-      				placeholder="Contact Info (Phone number or email):"
+      				placeholder="Phone number"
       				name="contact"
       				type="string"
       				onChange={this.handleInputChange}
@@ -81,15 +81,24 @@ class Form extends Component {
       	<br />
       	<label>
       			<input
-      				placeholder="Address:"
+      				placeholder="Address"
       				name="address"
       				type="string"
       				onChange={this.handleInputChange}
       			/>
       	</label>
       	<br />
+        <label>
+            <input
+              placeholder="Number of people you can provide for"
+              name="number_of_people"
+              type="string"
+              onChange={this.handleInputChange}
+            />
+        </label>
+        <br />
       	<label>
-      		<label> What you can provide: </label>
+      		<label id="provisions"> What can you provide? </label>
     			<select
     				value={this.state.categories}
     				onChange={this.handleChange}>
