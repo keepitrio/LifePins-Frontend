@@ -62,10 +62,10 @@ class Form extends Component {
     return (
       <div id="sidebar">
       <form id="posting-form" onSubmit={this.handleSubmit}>
-      	<label>How can you help?</label>
+      	<label>Provide an amenity</label>
       	<label>
       			<input
-      				placeholder="Name"
+      				placeholder="Your name"
       				name="name"
       				type="string"
       				onChange={this.handleInputChange}
@@ -112,7 +112,7 @@ class Form extends Component {
   				</select>
       	</label>
       	<br />
-        <input id="prov-button" type="submit" value="Save Lives" onSubmit={this.setPosting}/>
+        <input id="prov-button" type="submit" value="Drop an AidPin" onSubmit={this.setPosting}/>
       </form>
       <p>PLACEHOLDER TEXT</p>
       </div>

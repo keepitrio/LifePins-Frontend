@@ -62,13 +62,17 @@ form {
 }
 
 form input {
-  color: black;
+  color: white;
   width: 80%;
   margin: 5px;
   padding: 10px;
   border: none;
   background-color: #eafcee;
   font-size: 0.88em;
+}
+
+form label {
+  color: white;
 }
 
 #prov-button {
