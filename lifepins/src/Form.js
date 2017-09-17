@@ -17,6 +17,8 @@ class Form extends Component {
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
+    this.createPosting = this.createPosting.bind(this);
+    this.setPosting = this.setPosting.bind(this);
 	}
 
 	handleInputChange = (e) => {
@@ -30,7 +32,7 @@ class Form extends Component {
 
 	createPosting(name,	contact,	address,	categories,	number_of_people) {
 			var self = this
-			axios.post('lhttp://localhost:3000/create', {
+			axios.post('http://localhost:3000/create', {
 				name: name,
 				contact: contact, 
 				address: address,
@@ -38,10 +40,13 @@ class Form extends Component {
 				number_of_people: number_of_people
 			})
 		.then(function(response) {
+      console.log("did u even succeed");
+      console.log(response);
 			document.getElementById("posting-form").reset();
 			self.setState({dropdownValue: 'categories'});
 			})
 		.catch(function(error) {
+      console.log("this is an error");
 			console.log(error);
 		})
 	}
@@ -102,7 +107,7 @@ class Form extends Component {
       				onChange={this.handleInputChange}
       			/>
       	</label>
-      	<input type="submit" value="Save Lives" />
+      	<input type="submit" value="Save Lives" onSubmit={this.setPosting}/>
       </form>
     );
   }
