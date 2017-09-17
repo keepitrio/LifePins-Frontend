@@ -25,7 +25,9 @@ window.onload = function() {
         draggable: false
       }).bindPopup('Name: ' + markers[i]["name"] + '<br/>' +
                   'Can provide: ' + markers[i]["categories"] + '<br/>' +
-                  'Can accommodate: ' + markers[i]["number_of_people"] + '<br/>' + 'contact: ' + markers[i]["contact"] + '<br/>' + '<input id="clickMe" type="button" value="click here if no longer available" onclick="L.thorsten.removePosting(' + markerId +');">')
+                  'Can accommodate: ' + markers[i]["number_of_people"] + '<br/>' +
+                  'Contact: ' + markers[i]["contact"] + '<br/>' +
+                  '<input id="clickMe" type="button" value="Click here if no longer available" onclick="L.thorsten.removePosting(' + markerId +');">')
       .addTo(map)
       .addTo(markerGroup);
     }
@@ -36,7 +38,7 @@ window.onload = function() {
   });
 
   var map = L.mapquest.map('map', {
-    center: [37.790862, -122.401093],
+    center: [28.71227, -81.325607],
     layers: L.mapquest.tileLayer('map'),
     zoom: 12
   });
