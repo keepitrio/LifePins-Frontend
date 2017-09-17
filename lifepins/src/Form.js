@@ -32,7 +32,7 @@ class Form extends Component {
 	createPosting(name,	contact,	address,	categories,	number_of_people) {
 			axios.post('http://localhost:3001/create', {
 				name: name,
-				contact: contact, 
+				contact: contact,
 				address: address,
 				categories: categories,
 				number_of_people: number_of_people
@@ -55,7 +55,8 @@ class Form extends Component {
 
   render() {
     return (
-      <form id="posting-form">
+      <div id="sidebar">
+      <form>
       	<label>
       			<input
       				placeholder="Name"
@@ -105,8 +106,10 @@ class Form extends Component {
   				</select>
       	</label>
       	<br />
-        <input type="submit" value="Save Lives" onSubmit={this.setPosting}/>
+        <input id="prov-button" type="submit" value="Save Lives" onSubmit={this.setPosting}/>
       </form>
+      <p>PLACEHOLDER TEXT</p>
+      </div>
     );
   }
 }
