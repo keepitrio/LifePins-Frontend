@@ -8,9 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div id="map-container">
-          <div id="map"></div>
-        </div>
+        <div id="map"></div>
         <Form />
       </div>
     );
