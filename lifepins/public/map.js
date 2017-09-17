@@ -3,9 +3,18 @@ window.onload = function() {
   L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
   var sendGetRequest = $.get('http://localhost:3001/info');
+  var removePosting = function(id){
+    $.get('http://localhost:3001/remove?id=' + id);
+    window.location.reload();
+  }
+  var markerGroup = L.layerGroup();
+
+  L.thorsten = {};
+  L.thorsten.removePosting = removePosting;
 
   sendGetRequest.done(function(markers) {
     for (var i = 0; i < markers.length; i++) {
+      var markerId = markers[i]["id"]
       L.marker([markers[i]["latitude"], markers[i]["longitude"]], {
         icon: L.mapquest.icons.marker({
           primaryColor: '#228B22',
@@ -16,8 +25,9 @@ window.onload = function() {
         draggable: false
       }).bindPopup('Name: ' + markers[i]["name"] + '<br/>' +
                   'Can provide: ' + markers[i]["categories"] + '<br/>' +
-                  'Can accommodate: ' + markers[i]["number_of_people"])
-      .addTo(map);
+                  'Can accommodate: ' + markers[i]["number_of_people"] + '<br/>' + 'contact: ' + markers[i]["contact"] + '<br/>' + '<input id="clickMe" type="button" value="click here if no longer available" onclick="L.thorsten.removePosting(' + markerId +');">')
+      .addTo(map)
+      .addTo(markerGroup);
     }
   });
 
