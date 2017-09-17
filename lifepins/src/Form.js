@@ -60,6 +60,7 @@ class Form extends Component {
 
   render() {
     return (
+      <div id="sidebar">
       <form id="posting-form" onSubmit={this.handleSubmit}>
       	<label>How can you help?</label>
       	<label>
@@ -111,8 +112,10 @@ class Form extends Component {
   				</select>
       	</label>
       	<br />
-      	<input type="submit" value="Save Lives" />
+        <input id="prov-button" type="submit" value="Save Lives" onSubmit={this.setPosting}/>
       </form>
+      <p>PLACEHOLDER TEXT</p>
+      </div>
     );
   }
 }

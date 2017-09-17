@@ -3,7 +3,19 @@ body {
   padding-left: 3%;
   padding-right: 3%;
   font-family: 'Noto Sans', 'sans-serif';
-  background-color: #eafcee;
+  /*background-color: #cccccc;*/
+}
+body::after {
+  content: "";
+  background-image: url("./images/nice-rain.jpg");
+  background-size: cover;
+  opacity: 0.82;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
 }
 
 .App {
@@ -11,7 +23,7 @@ body {
 }
 
 #map {
-  width: 60%; 
+  width: 60%;
   height: 530px;
   display: inline-block;
   border-left: 0;
@@ -20,7 +32,7 @@ body {
 
 .header {
   font-family: 'Ubuntu', sans-serif;
-  color: #339933;
+  color: #21C421;
   font-size: 1.6em;
   text-align: center;
 }
@@ -35,24 +47,44 @@ body {
   height: 50px;
 }
 
-form {
+#sidebar {
   width: 30%;
   display: inline-block;
+  padding-left: 20px;
+}
+
+form {
   padding: 20px;
   border-radius: 3px;
   margin-left: 5%;
-  box-shadow: 0 0 3px #888888;
+  background-color: #262626;
+  opacity: 0.8;
 }
 
 form input {
-  color: #339933;
+  color: black;
   width: 80%;
   margin: 5px;
   padding: 10px;
   border: none;
   background-color: #eafcee;
+  font-size: 0.88em;
+}
+
+#prov-button {
+  background-color: #228B22;
+  border-radius: 5px;
+  margin-top: 15px;
+  font-size: 1em;
+  font-weight: bold;
+  opacity: 1;
+}
+
+
+::-webkit-input-placeholder {
+  color: black;
 }
 
 #provisions {
-  
+
 }
