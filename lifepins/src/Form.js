@@ -3,21 +3,21 @@ import './App.css';
 import axios from 'axios';
 
 class Form extends Component {
-	constructor() {
-		super();
+	constructor(props) {
+		super(props);
 
 		this.state = {
 			name: '',
 			contact: '',
 			address: '',
 			categories: '',
-			number_of_people: '',
-			dropdownValue: 'Category'
+			number_of_people: ''
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
     this.createPosting = this.createPosting.bind(this);
-    this.setPosting = this.setPosting.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChange = this.handleChange.bind(this);
 	}
 
 	handleInputChange = (e) => {
@@ -29,33 +29,40 @@ class Form extends Component {
 		});
   }
 
-	createPosting(name,	contact,	address,	categories,	number_of_people) {
-			axios.post('http://localhost:3001/create', {
-				name: name,
-				contact: contact, 
-				address: address,
-				categories: categories,
-				number_of_people: number_of_people
+  createPosting(name, contact,  address,  categories, number_of_people) {
+      axios.get('http://localhost:3001/create', {params:
+        {
+        name: name,
+        contact: contact, 
+        address: address,
+        categories: categories,
+        number_of_people: number_of_people
+        }
 			})
 		.then(function(response) {
-      console.log("did u even succeed");
-      console.log(response);
+      console.log("hurray")
 			document.getElementById("posting-form").reset();
-			this.setState({dropdownValue: 'categories'});
+      window.location.reload();
 			})
 		.catch(function(error) {
-      console.log("this is an error");
 			console.log(error);
 		})
 	}
 
-	setPosting() {
+  handleSubmit(event) {
+    event.preventDefault();
     this.createPosting(this.state.name, this.state.contact, this.state.address, this.state.categories, this.state.number_of_people)
-	}
+  }
+
+  handleChange(e) {
+    this.setState({categories: e.target.value})
+  }
 
   render() {
     return (
-      <form id="posting-form">
+      <div id="sidebar">
+      <form id="posting-form" onSubmit={this.handleSubmit}>
+      	<label>How can you help?</label>
       	<label>
       			<input
       				placeholder="Name"
@@ -100,8 +107,10 @@ class Form extends Component {
           <input type="checkbox" name="provisions" value="{this.state.value}" onChange={this.handleInputChange}/>Bed<br/>
       	</label>
       	<br />
-        <input type="submit" value="Save Lives" onSubmit={this.setPosting}/>
+        <input id="prov-button" type="submit" value="Save Lives" onSubmit={this.setPosting}/>
       </form>
+      <p>PLACEHOLDER TEXT</p>
+      </div>
     );
   }
 }
