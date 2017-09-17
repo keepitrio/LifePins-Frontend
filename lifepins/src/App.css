@@ -9,7 +9,7 @@ body::after {
   content: "";
   background-image: url("./images/nice-rain.jpg");
   background-size: cover;
-  opacity: 0.82;
+  opacity: 0.8;
   position: fixed;
   top: 0;
   left: 0;
