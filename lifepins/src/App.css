@@ -9,7 +9,7 @@ body::after {
   content: "";
   background-image: url("./images/nice-rain.jpg");
   background-size: cover;
-  opacity: 0.82;
+  opacity: 0.8;
   position: fixed;
   top: 0;
   left: 0;
@@ -32,7 +32,8 @@ body::after {
 
 .header {
   font-family: 'Ubuntu', sans-serif;
-  color: #21C421;
+  color: #21B421;
+  text-shadow: 0.5px 0.5px darkgrey;
   font-size: 1.6em;
   text-align: center;
 }
@@ -89,5 +90,17 @@ form label {
 }
 
 #provisions {
+  width: 85%;
+  margin: 5px;
+  font-size: 0.88em;
+  height: 35px;
+}
 
+#clickMe {
+  background-color: #AF3131;
+  color: white;
+  border-radius: 5px;
+  border: 0.5px solid lightgrey;
+  margin-top: 5px;
+  font-size: 1em;
 }
