@@ -12,8 +12,7 @@ class Form extends Component {
 			address: '',
 			categories: '',
 			number_of_people: '',
-			dropdownValue: 'Category',
-			address: ''
+			dropdownValue: 'Category'
 		}
 
 		this.handleInputChange = this.handleInputChange.bind(this);
@@ -28,11 +27,10 @@ class Form extends Component {
 		this.setState({
 			[name]: value
 		});
-	}
+  }
 
 	createPosting(name,	contact,	address,	categories,	number_of_people) {
-			var self = this
-			axios.post('http://localhost:3000/create', {
+			axios.post('http://localhost:3001/create', {
 				name: name,
 				contact: contact, 
 				address: address,
@@ -43,7 +41,7 @@ class Form extends Component {
       console.log("did u even succeed");
       console.log(response);
 			document.getElementById("posting-form").reset();
-			self.setState({dropdownValue: 'categories'});
+			this.setState({dropdownValue: 'categories'});
 			})
 		.catch(function(error) {
       console.log("this is an error");
@@ -52,7 +50,7 @@ class Form extends Component {
 	}
 
 	setPosting() {
-		this.createPosting(this.state.name, this.state.contact, this.state.address, this.state.categories, this.state.number_of_people)
+    this.createPosting(this.state.name, this.state.contact, this.state.address, this.state.categories, this.state.number_of_people)
 	}
 
   render() {
