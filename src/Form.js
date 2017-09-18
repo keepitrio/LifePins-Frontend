@@ -30,7 +30,7 @@ class Form extends Component {
   }
 
   createPosting(name, contact,  address,  categories, number_of_people) {
-      axios.get('http://localhost:3001/create', {params:
+      axios.get('https://aidpins-backend.herokuapp.com/create', {params:
         {
         name: name,
         contact: contact,
