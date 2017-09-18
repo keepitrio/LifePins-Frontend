@@ -2,9 +2,9 @@ window.onload = function() {
 
   L.mapquest.key = 'lYrP4vF3Uk5zgTiGGuEzQGwGIVDGuy24';
 
-  var sendGetRequest = $.get('https://aidpins-backend.herokuapp.com/info');
+  var sendGetRequest = $.get('https://aidpins-backend.herokuapp.com/index');
   var removePosting = function(id){
-    $.get('https://aidpins-backend.herokuapp.com/remove?id=' + id);
+    $.get('https://aidpins-backend.herokuapp.com/delete?id=' + id);
     window.location.reload();
   }
   var markerGroup = L.layerGroup();
