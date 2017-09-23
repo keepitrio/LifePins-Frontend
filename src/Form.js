@@ -40,7 +40,6 @@ class Form extends Component {
         }
       })
     .then(function(response) {
-      console.log("hurray")
       document.getElementById("posting-form").reset();
       window.location.reload();
       })
